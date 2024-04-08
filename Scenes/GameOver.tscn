@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy63qu2p0ub03"]
+
+[ext_resource type="FontFile" uid="uid://c1e6fq3rtteqw" path="res://Assets/Retro Gaming.ttf" id="1_veknv"]
+[ext_resource type="Script" path="res://Scripts/GameOver.gd" id="1_vujck"]
+
+[node name="Game Over" type="CanvasLayer"]
+script = ExtResource("1_vujck")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 388.0
+offset_top = 234.0
+offset_right = 778.0
+offset_bottom = 311.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_veknv")
+theme_override_font_sizes/font_size = 60
+text = "GAME OVER!"
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 512.0
+offset_top = 378.0
+offset_right = 668.0
+offset_bottom = 425.0
+theme_override_fonts/font = ExtResource("1_veknv")
+theme_override_font_sizes/font_size = 30
+text = "Restart"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
